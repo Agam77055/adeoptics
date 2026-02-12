@@ -101,7 +101,7 @@ export const Hero: React.FC = () => {
   const slide = slides[current];
 
   return (
-    <section className="relative w-full h-[1100px] lg:h-[1300px] overflow-hidden select-none -mt-12">
+    <section className="relative w-full h-[700px] md:h-[800px] lg:h-[1300px] overflow-hidden select-none -mt-12">
       {/* Slide backgrounds */}
       {slides.map((s, i) => (
         <div
@@ -121,24 +121,24 @@ export const Hero: React.FC = () => {
           key={current}
           className="container-custom text-center text-white animate-fade-in"
         >
-          <p className="text-brand-coral font-medium uppercase tracking-widest text-sm mb-4">
+          <p className="text-brand-coral font-medium uppercase tracking-widest text-xs md:text-sm mb-2 md:mb-4">
             {slide.subtitle}
           </p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
             {slide.title}
             <br />
             <span className="text-brand-coral">{slide.highlight}</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-10 text-neutral-200 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-2xl mb-6 md:mb-10 text-neutral-200 max-w-3xl mx-auto leading-relaxed px-4 md:px-0">
             {slide.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg">
+            <Button variant="primary" size="md">
               Shop Now
             </Button>
             <Button
               variant="outline"
-              size="lg"
+              size="md"
               className="border-white text-white hover:bg-white hover:text-neutral-black hover:border-white"
             >
               Learn More
@@ -147,10 +147,10 @@ export const Hero: React.FC = () => {
         </div>
       </a>
 
-      {/* Left arrow */}
+      {/* Left arrow - hidden on mobile */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm flex items-center justify-center transition-all duration-200 text-white cursor-pointer"
+        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm items-center justify-center transition-all duration-200 text-white cursor-pointer"
         aria-label="Previous slide"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,10 +158,10 @@ export const Hero: React.FC = () => {
         </svg>
       </button>
 
-      {/* Right arrow */}
+      {/* Right arrow - hidden on mobile */}
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm flex items-center justify-center transition-all duration-200 text-white cursor-pointer"
+        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 backdrop-blur-sm items-center justify-center transition-all duration-200 text-white cursor-pointer"
         aria-label="Next slide"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

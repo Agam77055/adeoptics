@@ -91,13 +91,13 @@ export const Recommendations: React.FC = () => {
         </ScrollFade>
       </div>
 
-      {/* Grid - edge to edge */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 px-20">
+      {/* Grid - padded on mobile, edge to edge on desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 px-3 md:px-20">
         {reviews.map((review, index) => (
           <ScrollFade key={review.id} delay={index * 100}>
             <div className="bg-neutral-50 rounded-lg overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-row h-full">
               {/* Full-height image */}
-              <div className="w-40 shrink-0 relative">
+              <div className="w-24 md:w-40 shrink-0 relative">
                 <img
                   src={review.image}
                   alt={review.name}
@@ -110,26 +110,26 @@ export const Recommendations: React.FC = () => {
               </div>
 
               {/* Content */}
-              <div className="px-3 py-20 flex flex-col justify-between flex-1 min-w-0">
+              <div className="px-3 py-4 md:py-20 flex flex-col justify-between flex-1 min-w-0">
                 <div>
                   {/* Name + role */}
-                  <p className="font-semibold text-neutral-black text-base">{review.name}</p>
-                  <p className="text-sm text-neutral-600 mb-3">{review.role}</p>
+                  <p className="font-semibold text-neutral-black text-sm md:text-base">{review.name}</p>
+                  <p className="text-xs md:text-sm text-neutral-600 mb-2 md:mb-3">{review.role}</p>
 
                   {/* Review text */}
-                  <p className="text-sm text-neutral-600 leading-relaxed line-clamp-4">
+                  <p className="text-xs md:text-sm text-neutral-600 leading-relaxed line-clamp-3 md:line-clamp-4">
                     {review.excerpt}
                   </p>
                 </div>
 
                 {/* Product purchased */}
-                <div className="mt-4 pt-4 border-t border-neutral-200 flex items-center gap-2">
-                  <div className="w-8 h-8 rounded bg-neutral-200 flex items-center justify-center shrink-0">
-                    <svg className="w-4 h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-neutral-200 flex items-center gap-2">
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded bg-neutral-200 flex items-center justify-center shrink-0">
+                    <svg className="w-3 h-3 md:w-4 md:h-4 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                     </svg>
                   </div>
-                  <span className="text-xs text-neutral-600 font-medium truncate">{review.productName}</span>
+                  <span className="text-[10px] md:text-xs text-neutral-600 font-medium truncate">{review.productName}</span>
                 </div>
               </div>
             </div>

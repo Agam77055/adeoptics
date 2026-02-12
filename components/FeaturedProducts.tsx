@@ -22,8 +22,8 @@ export const FeaturedProducts: React.FC = () => {
         </ScrollFade>
       </div>
 
-      {/* 2x2 Product Grid - full width, edge to edge */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 px-0">
+      {/* 2x2 Product Grid - padded on mobile, edge to edge on desktop */}
+      <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 md:gap-4 lg:gap-6 px-3 md:px-0">
         {displayProducts.map((product, index) => (
           <ScrollFade key={product.id} delay={index * 100}>
             <FeaturedProductCard product={product} />

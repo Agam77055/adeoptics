@@ -9,28 +9,23 @@ export const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({ produc
   return (
     <div className="group bg-neutral-100 rounded-xl lg:rounded-none overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 cursor-pointer h-full">
       {/* Product info */}
-      <div className="p-5">
-        {/* Category badge */}
-        {/* <span className="inline-block px-2.5 py-0.5 text-xs font-medium text-brand-coral bg-brand-coral/10 rounded-full mb-3 uppercase tracking-wide">
-          {product.category.replace(/-/g, ' ')}
-        </span> */}
-
+      <div className="p-3 md:p-5">
         {/* Product name */}
-        <h3 className="text-xl font-bold text-center text-neutral-black font-heading mb-0.5 group-hover:text-brand-coral transition-colors duration-200">
+        <h3 className="text-sm md:text-xl font-bold text-center text-neutral-black font-heading mb-0.5 group-hover:text-brand-coral transition-colors duration-200">
           {product.name}
         </h3>
 
         {/* Model number */}
-        <p className="text-sm text-center text-neutral-600 mb-4">{product.model}</p>
+        <p className="text-xs md:text-sm text-center text-neutral-600 mb-2 md:mb-4">{product.model}</p>
 
         {/* Buy Now button */}
-        <button className="w-full py-2.5 px-0 text-black text-sm group-hover:text-brand-coral transition-colors duration-200 font-semibold cursor-pointer">
+        <button className="w-full py-1.5 md:py-2.5 px-0 text-black text-xs md:text-sm group-hover:text-brand-coral transition-colors duration-200 font-semibold cursor-pointer">
           Buy Now
         </button>
       </div>
 
       {/* Image area */}
-      <div className="relative h-56 md:h-80 bg-neutral-100 overflow-hidden">
+      <div className="relative h-36 md:h-80 bg-neutral-100 overflow-hidden">
         <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:-translate-y-3">
           <div className="text-center">
             <svg
